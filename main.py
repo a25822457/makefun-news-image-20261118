@@ -1,8 +1,8 @@
-"""news-image-20261118 entry (Python 3.13, standard library only).
+"""news-image-20261118 entry, v4 (Python 3.13, standard library only).
 
-Copies the front-page image held beside this file to /output/entry.png.
-The image is the rendered front page for Wednesday 18 November 2026.
-It makes no network calls and writes the same bytes on every run.
+Writes the v4 front-page image to /output/entry.png. The image is rendered
+offline by render_v4.py and held beside this file; this program only copies
+it, so it needs no network and writes the same bytes on every run.
 
 Usage:
     python3 main.py [output-dir]

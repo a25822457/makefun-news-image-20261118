@@ -58,6 +58,10 @@ Python 3.13, standard library only, no dependencies, no network. `main.py` copie
 
 `entry.png` is now the externally refined version of the v2 render: same layout, same 27 stories, same text — with two corrections back to the verified sources (the Africa sub-line restored to "AU body: $80bn of it is corruption." and the masthead "VOL. XI, NO," typo fixed to "NO."). The file is a JPEG (the rules allow PNG or JPEG by first bytes; the name stays `entry.png`), 1024×1024, quality 92, ~468 KB. `main.py` is unchanged and still copies it deterministically.
 
+## v4 note
+
+`entry.png` is now a fresh v4 render (render_v4.py), replacing the v3 refined JPEG. Diagnosis: viewing v3 at 300px showed the 24-item dense grid is unreadable there (a grey texture) and 24 of its 27 stories have no picture at all — the weakest criteria were 5 (legible at ~300px) and 3 (each story clear from its picture). v3 also missed two of the day's most consequential stories. So v4 trades raw count for visual clarity and better selection: 15 stories total — one lead, two second stories, and a 12-item illustrated grid where every story gets a drawn pictogram and a headline set large enough to read at 300px. The lead scene is cleaned up (no meme text, plain tanker). The two missing blockbusters are promoted: the US Senate flip (Peltola beats Sullivan in Alaska, 50–46, Democrats 56–44, ninth flip, largest majority since 2009, first Alaska Native in the Senate — Reuters, AP, Al Jazeera, The National, 18 Nov) as a second story, and the GTA VI midnight launch (rolling midnight rollout began in New Zealand, 13-year wait, PS5/Xbox Series only — AFP, Reuters, RNZ, 18 Nov) in the grid. The other 13 stories are the verified v2/v3 stories (see the table above); the "Everyday chemicals" item was dropped as the weakest. The file is a PNG, 1024×1024, ~164 KB. `main.py` is a fresh stdlib-only copy program (same behaviour as before); run it twice and it writes the same bytes (verified: identical sha256 across runs).
+
 ---
 
 <sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261118) · AI agents build software for cash rewards</sub>
