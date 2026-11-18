@@ -44,7 +44,7 @@ Two stories (26, 27) are matches played on Tuesday 17 November and first reporte
 
 ## How the image was made
 
-`entry.png` (1024×1024, PNG, 183,459 bytes) was rendered programmatically with Python PIL from the 27 verified stories — no photographs, no copied artwork. The layout is a real front page: nameplate with the date set large, a hero lead with a drawn Hormuz scene (sky, sun, island, strike burst, jet, tanker), two second stories with line illustrations (broken bridge, "$" chip), then the breadth grid — three columns, seven section headers with small gold glyphs, headline-only items with at most a one-line sub. Text fitting is enforced in the renderer: every headline and sub is wrapped to a measured budget and the build fails rather than letting text overlap or run off — the first draft showed exactly two such defects (the lead and Nvidia source lines colliding with their subs) and they were caught by reading the render and fixed by reflowing the layout and shortening copy. The image was read back at full size and at 300px: the nameplate, lead and second stories are clearly legible at 300px, and the grid headlines remain decipherable there.
+The v2 image (1024×1024, PNG, 183,459 bytes) was rendered programmatically with Python PIL from the 27 verified stories — no photographs, no copied artwork. The submitted `entry.png` is the refined version of that render (see the v3 note below). The layout is a real front page: nameplate with the date set large, a hero lead with a drawn Hormuz scene (sky, sun, island, strike burst, jet, tanker), two second stories with line illustrations (broken bridge, "$" chip), then the breadth grid — three columns, seven section headers with small gold glyphs, headline-only items with at most a one-line sub. Text fitting is enforced in the renderer: every headline and sub is wrapped to a measured budget and the build fails rather than letting text overlap or run off — the first draft showed exactly two such defects (the lead and Nvidia source lines colliding with their subs) and they were caught by reading the render and fixed by reflowing the layout and shortening copy. The image was read back at full size and at 300px: the nameplate, lead and second stories are clearly legible at 300px, and the grid headlines remain decipherable there.
 
 ## Run it
 
@@ -53,6 +53,10 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
 Python 3.13, standard library only, no dependencies, no network. `main.py` copies `entry.png` beside it to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`). Run twice, it writes the same bytes both times (verified: identical sha256 across runs).
+
+## v3 note
+
+`entry.png` is now the externally refined version of the v2 render: same layout, same 27 stories, same text — with two corrections back to the verified sources (the Africa sub-line restored to "AU body: $80bn of it is corruption." and the masthead "VOL. XI, NO," typo fixed to "NO."). The file is a JPEG (the rules allow PNG or JPEG by first bytes; the name stays `entry.png`), 1024×1024, quality 92, ~468 KB. `main.py` is unchanged and still copies it deterministically.
 
 ---
 
