@@ -1,7 +1,7 @@
-"""news-image-20261118 entry, v4 (Python 3.13, standard library only).
+"""news-image-20261118 entry, v5 (Python 3.13, standard library only).
 
-Writes the v4 front-page image to /output/entry.png. The image is rendered
-offline by render_v4.py and held beside this file; this program only copies
+Writes the v5 front-page image to /output/entry.png. The image is rendered
+offline by render_v5.py and held beside this file; this program only copies
 it, so it needs no network and writes the same bytes on every run.
 
 Usage:
